@@ -8,3 +8,23 @@
 то вводятся эти символы. Программа должна вывести на экран любой
 символ алфавита от 'a' до 'f' включительно.
 """
+
+from random import random
+
+print("случайное целое число")
+MIN = int(input("Нижняя граница: "))
+BORDER = int(input("Верхняя граница: "))
+NUM = int(random() * (BORDER - MIN + 1)) + MIN
+print(NUM)
+
+print("случайное вещественное число")
+MIN = float(input("Нижняя граница: "))
+BORDER = float(input("Верхняя граница: "))
+NUM = random() * (BORDER - MIN) + MIN
+print(round(NUM, 4))
+
+print("случайный символ")
+MIN = ord(input("Нижняя граница: "))
+BORDER = ord(input("Верхняя граница: "))
+NUM = int(random() * (BORDER - MIN + 1)) + MIN
+print(chr(NUM))
