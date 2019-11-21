@@ -2,20 +2,20 @@
 from random import random
 
 N = int(input("Укажите длину массива: "))
-ARR = [0] * N
+arr = [0] * N
 for i in range(N):
     f = True
-    ARR[i] = int(random() * 10)
-    print(f"|{ARR[i]:3d}|", end=' ')
+    arr[i] = int(random() * 10)
+    print(f"|{arr[i]:3d}|", end=' ')
 
 
 MNUMB = 0
 MCOUNT = 0
 
-for i in ARR:
-    if ARR.count(i) > MCOUNT:
+for i in arr:
+    if arr.count(i) > MCOUNT:
         MNUMB = i
-        MCOUNT = ARR.count(i)
+        MCOUNT = arr.count(i)
 
 print()
 

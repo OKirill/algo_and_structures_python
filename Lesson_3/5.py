@@ -4,18 +4,18 @@
 from random import random
 
 N = int(input("Укажите длину массива: "))
-ARR = []
+arr = []
 for i in range(N):
-    ARR.append(int(random() * 100) - 50)
-print(ARR)
+    arr.append(int(random() * 100) - 50)
+print(arr)
 
 i = 0
 index = -1
 while i < N:
-    if ARR[i] < 0 and index == -1:
+    if arr[i] < 0 and index == -1:
         index = i
-    elif ARR[i] < 0 and ARR[i] > ARR[index]:
+    elif arr[i] < 0 and arr[i] > arr[index]:
         index = i
     i += 1
 
-print(index + 1, ':', ARR[index])
+print(index + 1, ':', arr[index])
