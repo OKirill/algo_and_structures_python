@@ -5,3 +5,29 @@
 число, чем то, что загадано. Если за 10 попыток число не отгадано,
 то вывести загаданное число.
 """
+
+import random
+
+
+def quizz(number, guesses_count):
+    if guesses_count == 10:
+        return print('У вас не осталось попыток')
+    print(f'Ваша {guesses_count + 1} попытка из 10')
+    guess = int(input('Попробуйте угадать число: '))
+    if guess == number:
+        return print('Вы победили')
+
+    if guess > number:
+        print("---------------------------------")
+        print('Введите меньшее число')
+        print("---------------------------------")
+    elif guess < number:
+        print("---------------------------------")
+        print('Введите большее число')
+        print("---------------------------------")
+    guesses_count += 1
+    return quizz(number, guesses_count)
+
+
+number = random.randint(0, 100)
+quizz(number, 0)
