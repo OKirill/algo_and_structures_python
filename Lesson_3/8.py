@@ -8,11 +8,13 @@
 M = 5
 N = 4
 arr = []
+print("Программа для подсчета элементов строки матрицы")
 for i in range(N):
     b = []
     summ = 0
-    print("%d-я строка:" % (i + 1))
+    print(f"Ввелите элементы для строки №{i+1}:")
     for j in range(M - 1):
+
         n = int(input())
         summ += n
         b.append(n)
