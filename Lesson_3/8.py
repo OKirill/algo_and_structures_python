@@ -4,3 +4,20 @@
 записывать ее в последнюю ячейку строки.
 В конце следует вывести полученную матрицу.
 """
+
+M = 5
+N = 4
+arr = []
+for i in range(N):
+    b = []
+    summ = 0
+    print("%d-я строка:" % (i + 1))
+    for j in range(M - 1):
+        n = int(input())
+        summ += n
+        b.append(n)
+    b.append(summ)
+    arr.append(b)
+
+for i in arr:
+    print(i)
