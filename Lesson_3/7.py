@@ -10,7 +10,7 @@ N = int(input("Укажите длину массива: "))
 arr = []
 for i in range(N):
     arr.append(int(random() * 10))
-    print("%4d" % arr[i], end='')
+    print(f"{arr[i]:4d}", end='')
 print()
 
 if arr[0] > arr[1]:
