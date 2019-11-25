@@ -47,8 +47,8 @@ def eratosfen():
 
 print(timeit.timeit("simple()", setup="from __main__ import simple", number=1))
 print(timeit.timeit("eratosfen()", setup="from __main__ import eratosfen", number=1))
-# cProfile.run("simple(i)")
-# cProfile.run("eratosfen(i)")
+cProfile.run("simple()")
+cProfile.run("eratosfen()")
 
 """
 При вводном диапазоне 1000 и числе под номером 5
@@ -64,4 +64,5 @@ print(timeit.timeit("eratosfen()", setup="from __main__ import eratosfen", numbe
 С рещетом: 13.4854729
 
 Как видно на длинной дистанции и большем диапазоне алгоритм эратосфена начинает вырываться вперед, в то время как при небольшом диапазоне - наоборот.
+Это далеко не самые оптимальые решения нахождения i-го числа и можно сделать их намного быстрее, но для эксперемента были выбраны специально "медлительные" способы решения
 """
