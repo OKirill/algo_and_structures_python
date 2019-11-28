@@ -6,11 +6,11 @@
 вывести наименования предприятий, чья прибыль ниже среднего.
 """
 
-import collections
+from collections import namedtuple
 
-company = collections.namedtuple('company', ['name', 'quarter_income', 'income'])
+company = namedtuple('company', ['name', 'quarter_income', 'income'])
 
-qnt_quarter = 4
+count_quarter = 4
 company_set = set()
 total_income = 0
 
@@ -21,14 +21,13 @@ for i in range(1, n + 1):
     incomes = []
     name = input(f'Введите наименования предприятий {i}: ')
 
-    for j in range(qnt_quarter):
+    for j in range(count_quarter):
         incomes.append(int(input(f'Введите прибыль за {j + 1}-й квартал: ')))
         income += incomes[j]
 
     f = company(name=name, quarter_income=tuple(incomes), income=income)
     company_set.add(f)
     total_income += income
-
 
 middle_income = total_income / n
 print('Средняя годовая прибыль всех предприятий: ', middle_income)
