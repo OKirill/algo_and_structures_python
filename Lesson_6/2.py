@@ -12,7 +12,8 @@ from sys import getsizeof
 
 class Vehicle(object):
     """docstring"""
-    
+    __slots__ = ('color', 'doors', 'tires')
+
     def __init__(self, color, doors, tires):
         """Constructor"""
         self.color = color
@@ -32,9 +33,8 @@ class Vehicle(object):
         return "I'm driving!"
 
 
-
 BC_OBJ = Vehicle('green', 5, 4)
-print(BC_OBJ.__dict__)
+print(BC_OBJ.__slots__)
 print(asizeof.asizeof((BC_OBJ)))
 # if __name__ == "__main__":
 #     car = Vehicle("blue", 5, 4)
@@ -47,4 +47,10 @@ print(asizeof.asizeof((BC_OBJ)))
 """Реализация без слотов
 {'color': 'green', 'doors': 5, 'tires': 4}
 264
+----------------------------------------
+При реализации со слотами - 
+('color', 'doors', 'tires')
+104
+
+Отсюда вывод что заранее выделенная память в таких случаях эффективней( в данном случае более чам в 2 с половиной раза)
 """
