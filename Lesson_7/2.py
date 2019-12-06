@@ -6,7 +6,7 @@
 from random import randint
 
 quantity = int(input('Введите длину массива: '))
-numbers = [randint(0, 50) for _ in range(quantity)]
+numbers = [randint(0, 50) for i in range(quantity)]
 print(f'Исходный массив: {numbers} ')
 
 
