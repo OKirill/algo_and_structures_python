@@ -4,14 +4,12 @@
 Требуется найти количество различных подстрок в этой строке.
 """
 
-
 import hashlib
 
 s = input("Укажите строку из латинских букв(они будут переведены в нижний регистр): ").lower()
 result = set()
 
 N = len(s)
-
 
 for i in range(N):
     if i == 0:
@@ -22,6 +20,5 @@ for i in range(N):
         print(s[i:j])
         result.add(hashlib.md5(s[i:j].encode('utf-8')).hexdigest())
 print(result)
-
 
 print(f'Количество различных подстрок в строке {s} равно {len(result)}')
